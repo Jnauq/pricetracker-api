@@ -8,8 +8,8 @@ const getOne = (id) => {
     return db.execute(`SELECT * FROM Products WHERE id = ${id};`)
 }
 
-const remove = (url) => {
-    return db.execute(`DELETE * FROM Products WHERE prodUrl = '${url}';`)
+const remove = (id) => {
+    return db.execute(`DELETE * FROM Products WHERE id = ${id};`)
 }
 
 const add = (name, price, stock, img, url) => {

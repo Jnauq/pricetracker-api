@@ -19,9 +19,9 @@ exports.getOneProduct = (req, res) => {
 }
 
 exports.removeProduct = (req, res) => {
-    let prodUrl = req.body.prodUrl
+    let id = req.params.id
 
-    let del = model.remove(prodUrl)
+    let del = model.remove(id)
     del.then( ([data, metadata]) => {
         let products = model.getAll()
         products.then( ([data, metadata]) => {
