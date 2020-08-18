@@ -62,12 +62,14 @@ exports.updateProducts = async (req, res) => {
             let stock = info.stock == null ? null : info.stock
             let url = info.prodUrl == null ? null : info.prodUrl
 
-            model.update(price, stock, url)
+            var update = model.update(price, stock, url)
         }
 
-        let products = model.getAll()
-        products.then( ([data, metadata]) => {
-            res.send(data)
+        update.then( ([data, metadata]) => {
+            let products = model.getAll()
+            products.then( ([data, metadata]) => {
+                res.send(data)
+            })
         })
     })
 }
