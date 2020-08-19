@@ -7,9 +7,9 @@ router.get('/api/products/:id', ProductController.getOneProduct);
 
 router.get('/api/update', ProductController.updateProducts)
 
-router.delete('api/remove/:id', ProductController.removeProduct);
+router.delete('/api/remove/:id', ProductController.removeProduct);
 
-router.post('api/add', ProductController.addProduct)
+router.post('/api/addNew', ProductController.addProduct);
 
 
 module.exports = router;
