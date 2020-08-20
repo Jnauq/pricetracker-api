@@ -31,8 +31,7 @@ exports.removeProduct = (req, res) => {
 }
 
 exports.addProduct = async (req, res) => {
-    // let prodUrl = req.body.prodUrl
-    let prodUrl = "https://www.amazon.ca/AMD-Ryzen-3600-12-thread-processor/dp/B07STGGQ18"
+    let prodUrl = req.body.prodUrl
 
     let scrapedInfo = await scraper.scrapeNewProduct(prodUrl)
 
