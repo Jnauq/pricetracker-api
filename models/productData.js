@@ -9,11 +9,11 @@ const getOne = (id) => {
 }
 
 const remove = (id) => {
-    return db.execute(`DELETE * FROM Products WHERE id = ${id};`)
+    return db.execute(`DELETE FROM Products WHERE id = ${id};`)
 }
 
 const add = (name, price, stock, img, url) => {
-    let sql = "INSERT into Products (name, price, stock, img, url) values (?, ?, ?, ?, ?)";
+    let sql = "INSERT into Products (prodName, price, stock, imgUrl, prodUrl) values (?, ?, ?, ?, ?)";
 
     return db.query(sql,[
         name, price, stock, img, url
