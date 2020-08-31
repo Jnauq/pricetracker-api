@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
  
 app.get('/', function (req, res) {
-  res.send('Amazon PriceTracker API')
+  res.send('Welcome to Amazon PriceTracker API')
 });
 
 
