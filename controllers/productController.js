@@ -46,6 +46,8 @@ exports.addProduct = async (req, res) => {
         products.then( ([data, metadata]) => {
             res.send(data)
         })
+    }).catch( error => {
+        console.log(error)
     })
 }
 
@@ -70,6 +72,8 @@ exports.updateProducts = async (req, res) => {
             products.then( ([data, metadata]) => {
                 res.send(data)
             })
+        }).catch( error => {
+            console.log(error)
         })
     })
 }
