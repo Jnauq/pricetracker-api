@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 exports.scrapeExisting = async (products) => {
 
     var results = []
-    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
+    const browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
     const page = await browser.newPage();
 
     for (let i = 0; i < products.length; i++) {
@@ -33,7 +33,7 @@ exports.scrapeExisting = async (products) => {
 
 exports.scrapeNewProduct = async (url) => {
 
-    const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
+    const browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
     const page = await browser.newPage();
 
     await page.goto(url);
