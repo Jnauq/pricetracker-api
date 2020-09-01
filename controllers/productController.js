@@ -34,7 +34,6 @@ exports.addProduct = async (req, res) => {
     let prodUrl = req.body.prodUrl
 
     let scrapedInfo = await scraper.scrapeNewProduct(prodUrl)
-    console.log(scrapedInfo)
 
     let name = scrapedInfo.title == null ? null : scrapedInfo.title
     let img = scrapedInfo.imgUrl == null ? null : scrapedInfo.imgUrl
@@ -57,7 +56,6 @@ exports.updateProducts = async (req, res) => {
     let urls = model.getUrls()
     urls.then( async ([data, metadata]) => {
         let scrapedInfo = await scraper.scrapeExisting(data)
-        console.log(scrapedInfo)
 
         for (let i = 0; i < scrapedInfo.length; i++) {
             const info = scrapedInfo[i]

@@ -21,8 +21,6 @@ exports.scrapeExisting = async (products) => {
             let priceSelector = document.querySelector('#price_inside_buybox');
             let price = priceSelector == null ? null : priceSelector.innerText;
 
-            console.log(stock, price)
-
             return {
                 price, 
                 stock,
